@@ -1,0 +1,296 @@
+define(['dart_sdk', 'packages/local_auth/auth_strings.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/platform/src/interface/local_platform.dart'], (function load__packages__local_auth__local_auth_dart(dart_sdk, packages__local_auth__auth_strings$46dart, packages__flutter__src__services__system_channels$46dart, packages__platform__src__interface__local_platform$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const auth_strings = packages__local_auth__auth_strings$46dart.auth_strings;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  const platform_channel = packages__flutter__src__services__system_channels$46dart.src__services__platform_channel;
+  const message_codecs = packages__flutter__src__services__system_channels$46dart.src__services__message_codecs;
+  const local_platform = packages__platform__src__interface__local_platform$46dart.src__interface__local_platform;
+  var local_auth = Object.create(dart.library);
+  var $addAll = dartx.addAll;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $add = dartx.add;
+  var $forEach = dartx.forEach;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    BiometricTypeL: () => (T.BiometricTypeL = dart.constFn(dart.legacy(local_auth.BiometricType)))(),
+    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    JSArrayOfBiometricType: () => (T.JSArrayOfBiometricType = dart.constFn(_interceptors.JSArray$(local_auth.BiometricType)))(),
+    StringTovoid: () => (T.StringTovoid = dart.constFn(dart.fnType(dart.void, [core.String])))(),
+    ListOfBiometricType: () => (T.ListOfBiometricType = dart.constFn(core.List$(local_auth.BiometricType)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: local_auth.BiometricType.prototype,
+        [_name$]: "BiometricType.face",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: local_auth.BiometricType.prototype,
+        [_name$]: "BiometricType.fingerprint",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: local_auth.BiometricType.prototype,
+        [_name$]: "BiometricType.iris",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], T.BiometricTypeL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: auth_strings.AndroidAuthMessages.prototype,
+        [AndroidAuthMessages_signInTitle]: null,
+        [AndroidAuthMessages_goToSettingsDescription]: null,
+        [AndroidAuthMessages_goToSettingsButton]: null,
+        [AndroidAuthMessages_deviceCredentialsSetupDescription]: null,
+        [AndroidAuthMessages_deviceCredentialsRequiredTitle]: null,
+        [AndroidAuthMessages_cancelButton]: null,
+        [AndroidAuthMessages_biometricSuccess]: null,
+        [AndroidAuthMessages_biometricRequiredTitle]: null,
+        [AndroidAuthMessages_biometricNotRecognized]: null,
+        [AndroidAuthMessages_biometricHint]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: auth_strings.IOSAuthMessages.prototype,
+        [IOSAuthMessages_cancelButton]: null,
+        [IOSAuthMessages_goToSettingsDescription]: null,
+        [IOSAuthMessages_goToSettingsButton]: null,
+        [IOSAuthMessages_lockOut]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: message_codecs.StandardMessageCodec.prototype
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[8] || CT.C8
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[7] || CT.C7,
+        [MethodChannel_name]: "plugins.flutter.io/local_auth"
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: local_platform.LocalPlatform.prototype
+      });
+    }
+  }, false);
+  var C = Array(10).fill(void 0);
+  var I = [
+    "file:///C:/Users/canbe/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/local_auth-1.1.0/lib/local_auth.dart",
+    "package:local_auth/local_auth.dart"
+  ];
+  var _name$ = dart.privateName(local_auth, "_name");
+  local_auth.BiometricType = class BiometricType extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (local_auth.BiometricType.new = function(index, _name) {
+    if (index == null) dart.nullFailed(I[0], 20, 6, "index");
+    if (_name == null) dart.nullFailed(I[0], 20, 6, "_name");
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = local_auth.BiometricType.prototype;
+  dart.addTypeTests(local_auth.BiometricType);
+  dart.addTypeCaches(local_auth.BiometricType);
+  dart.setLibraryUri(local_auth.BiometricType, I[1]);
+  dart.setFieldSignature(local_auth.BiometricType, () => ({
+    __proto__: dart.getFields(local_auth.BiometricType.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(local_auth.BiometricType, ['toString']);
+  local_auth.BiometricType.face = C[0] || CT.C0;
+  local_auth.BiometricType.fingerprint = C[1] || CT.C1;
+  local_auth.BiometricType.iris = C[2] || CT.C2;
+  local_auth.BiometricType.values = C[3] || CT.C3;
+  var AndroidAuthMessages_signInTitle = dart.privateName(auth_strings, "AndroidAuthMessages.signInTitle");
+  var AndroidAuthMessages_goToSettingsDescription = dart.privateName(auth_strings, "AndroidAuthMessages.goToSettingsDescription");
+  var AndroidAuthMessages_goToSettingsButton = dart.privateName(auth_strings, "AndroidAuthMessages.goToSettingsButton");
+  var AndroidAuthMessages_deviceCredentialsSetupDescription = dart.privateName(auth_strings, "AndroidAuthMessages.deviceCredentialsSetupDescription");
+  var AndroidAuthMessages_deviceCredentialsRequiredTitle = dart.privateName(auth_strings, "AndroidAuthMessages.deviceCredentialsRequiredTitle");
+  var AndroidAuthMessages_cancelButton = dart.privateName(auth_strings, "AndroidAuthMessages.cancelButton");
+  var AndroidAuthMessages_biometricSuccess = dart.privateName(auth_strings, "AndroidAuthMessages.biometricSuccess");
+  var AndroidAuthMessages_biometricRequiredTitle = dart.privateName(auth_strings, "AndroidAuthMessages.biometricRequiredTitle");
+  var AndroidAuthMessages_biometricNotRecognized = dart.privateName(auth_strings, "AndroidAuthMessages.biometricNotRecognized");
+  var AndroidAuthMessages_biometricHint = dart.privateName(auth_strings, "AndroidAuthMessages.biometricHint");
+  var IOSAuthMessages_cancelButton = dart.privateName(auth_strings, "IOSAuthMessages.cancelButton");
+  var IOSAuthMessages_goToSettingsDescription = dart.privateName(auth_strings, "IOSAuthMessages.goToSettingsDescription");
+  var IOSAuthMessages_goToSettingsButton = dart.privateName(auth_strings, "IOSAuthMessages.goToSettingsButton");
+  var IOSAuthMessages_lockOut = dart.privateName(auth_strings, "IOSAuthMessages.lockOut");
+  local_auth.LocalAuthentication = class LocalAuthentication extends core.Object {
+    authenticateWithBiometrics(opts) {
+      let localizedReason = opts && 'localizedReason' in opts ? opts.localizedReason : null;
+      if (localizedReason == null) dart.nullFailed(I[0], 37, 21, "localizedReason");
+      let useErrorDialogs = opts && 'useErrorDialogs' in opts ? opts.useErrorDialogs : true;
+      if (useErrorDialogs == null) dart.nullFailed(I[0], 38, 10, "useErrorDialogs");
+      let stickyAuth = opts && 'stickyAuth' in opts ? opts.stickyAuth : false;
+      if (stickyAuth == null) dart.nullFailed(I[0], 39, 10, "stickyAuth");
+      let androidAuthStrings = opts && 'androidAuthStrings' in opts ? opts.androidAuthStrings : C[4] || CT.C4;
+      if (androidAuthStrings == null) dart.nullFailed(I[0], 40, 25, "androidAuthStrings");
+      let iOSAuthStrings = opts && 'iOSAuthStrings' in opts ? opts.iOSAuthStrings : C[5] || CT.C5;
+      if (iOSAuthStrings == null) dart.nullFailed(I[0], 41, 21, "iOSAuthStrings");
+      let sensitiveTransaction = opts && 'sensitiveTransaction' in opts ? opts.sensitiveTransaction : true;
+      if (sensitiveTransaction == null) dart.nullFailed(I[0], 42, 10, "sensitiveTransaction");
+      return this.authenticate({localizedReason: localizedReason, useErrorDialogs: useErrorDialogs, stickyAuth: stickyAuth, androidAuthStrings: androidAuthStrings, iOSAuthStrings: iOSAuthStrings, sensitiveTransaction: sensitiveTransaction, biometricOnly: true});
+    }
+    authenticate(opts) {
+      let localizedReason = opts && 'localizedReason' in opts ? opts.localizedReason : null;
+      if (localizedReason == null) dart.nullFailed(I[0], 95, 21, "localizedReason");
+      let useErrorDialogs = opts && 'useErrorDialogs' in opts ? opts.useErrorDialogs : true;
+      if (useErrorDialogs == null) dart.nullFailed(I[0], 96, 10, "useErrorDialogs");
+      let stickyAuth = opts && 'stickyAuth' in opts ? opts.stickyAuth : false;
+      if (stickyAuth == null) dart.nullFailed(I[0], 97, 10, "stickyAuth");
+      let androidAuthStrings = opts && 'androidAuthStrings' in opts ? opts.androidAuthStrings : C[4] || CT.C4;
+      if (androidAuthStrings == null) dart.nullFailed(I[0], 98, 25, "androidAuthStrings");
+      let iOSAuthStrings = opts && 'iOSAuthStrings' in opts ? opts.iOSAuthStrings : C[5] || CT.C5;
+      if (iOSAuthStrings == null) dart.nullFailed(I[0], 99, 21, "iOSAuthStrings");
+      let sensitiveTransaction = opts && 'sensitiveTransaction' in opts ? opts.sensitiveTransaction : true;
+      if (sensitiveTransaction == null) dart.nullFailed(I[0], 100, 10, "sensitiveTransaction");
+      let biometricOnly = opts && 'biometricOnly' in opts ? opts.biometricOnly : false;
+      if (biometricOnly == null) dart.nullFailed(I[0], 101, 10, "biometricOnly");
+      return async.async(core.bool, function* authenticate() {
+        let t0;
+        if (!(localizedReason != null)) dart.assertFailed(null, I[0], 103, 12, "localizedReason != null");
+        let args = new (T.IdentityMapOfString$Object()).from(["localizedReason", localizedReason, "useErrorDialogs", useErrorDialogs, "stickyAuth", stickyAuth, "sensitiveTransaction", sensitiveTransaction, "biometricOnly", biometricOnly]);
+        if (dart.test(local_auth._platform.isIOS)) {
+          args[$addAll](iOSAuthStrings.args);
+        } else if (dart.test(local_auth._platform.isAndroid)) {
+          args[$addAll](androidAuthStrings.args);
+        } else {
+          dart.throw(new message_codec.PlatformException.new({code: "OtherOperatingSystem", message: "Local authentication does not support non-Android/iOS " + "operating systems.", details: "Your operating system is " + dart.str(local_auth._platform.operatingSystem)}));
+        }
+        t0 = (yield local_auth._channel.invokeMethod(core.bool, "authenticate", args));
+        return t0 == null ? false : t0;
+      });
+    }
+    stopAuthentication() {
+      return async.async(core.bool, function* stopAuthentication() {
+        let t0;
+        if (dart.test(local_auth._platform.isAndroid)) {
+          t0 = (yield local_auth._channel.invokeMethod(core.bool, "stopAuthentication"));
+          return t0 == null ? false : t0;
+        }
+        return true;
+      });
+    }
+    get canCheckBiometrics() {
+      return async.async(core.bool, function* canCheckBiometrics() {
+        return dart.nullCheck(yield local_auth._channel.invokeListMethod(core.String, "getAvailableBiometrics"))[$isNotEmpty];
+      });
+    }
+    isDeviceSupported() {
+      return async.async(core.bool, function* isDeviceSupported() {
+        let t0;
+        t0 = (yield local_auth._channel.invokeMethod(core.bool, "isDeviceSupported"));
+        return t0 == null ? false : t0;
+      });
+    }
+    getAvailableBiometrics() {
+      return async.async(T.ListOfBiometricType(), function* getAvailableBiometrics() {
+        let t0;
+        let result = (t0 = (yield local_auth._channel.invokeListMethod(core.String, "getAvailableBiometrics")), t0 == null ? T.JSArrayOfString().of([]) : t0);
+        let biometrics = T.JSArrayOfBiometricType().of([]);
+        result[$forEach](dart.fn(value => {
+          if (value == null) dart.nullFailed(I[0], 164, 28, "value");
+          switch (value) {
+            case "face":
+            {
+              biometrics[$add](local_auth.BiometricType.face);
+              break;
+            }
+            case "fingerprint":
+            {
+              biometrics[$add](local_auth.BiometricType.fingerprint);
+              break;
+            }
+            case "iris":
+            {
+              biometrics[$add](local_auth.BiometricType.iris);
+              break;
+            }
+            case "undefined":
+            {
+              break;
+            }
+          }
+        }, T.StringTovoid()));
+        return biometrics;
+      });
+    }
+  };
+  (local_auth.LocalAuthentication.new = function() {
+    ;
+  }).prototype = local_auth.LocalAuthentication.prototype;
+  dart.addTypeTests(local_auth.LocalAuthentication);
+  dart.addTypeCaches(local_auth.LocalAuthentication);
+  dart.setMethodSignature(local_auth.LocalAuthentication, () => ({
+    __proto__: dart.getMethods(local_auth.LocalAuthentication.__proto__),
+    authenticateWithBiometrics: dart.fnType(async.Future$(core.bool), [], {androidAuthStrings: auth_strings.AndroidAuthMessages, iOSAuthStrings: auth_strings.IOSAuthMessages, sensitiveTransaction: core.bool, stickyAuth: core.bool, useErrorDialogs: core.bool}, {localizedReason: core.String}),
+    authenticate: dart.fnType(async.Future$(core.bool), [], {androidAuthStrings: auth_strings.AndroidAuthMessages, biometricOnly: core.bool, iOSAuthStrings: auth_strings.IOSAuthMessages, sensitiveTransaction: core.bool, stickyAuth: core.bool, useErrorDialogs: core.bool}, {localizedReason: core.String}),
+    stopAuthentication: dart.fnType(async.Future$(core.bool), []),
+    isDeviceSupported: dart.fnType(async.Future$(core.bool), []),
+    getAvailableBiometrics: dart.fnType(async.Future$(core.List$(local_auth.BiometricType)), [])
+  }));
+  dart.setGetterSignature(local_auth.LocalAuthentication, () => ({
+    __proto__: dart.getGetters(local_auth.LocalAuthentication.__proto__),
+    canCheckBiometrics: async.Future$(core.bool)
+  }));
+  dart.setLibraryUri(local_auth.LocalAuthentication, I[1]);
+  local_auth.setMockPathProviderPlatform = function setMockPathProviderPlatform(platform) {
+    if (platform == null) dart.nullFailed(I[0], 27, 43, "platform");
+    local_auth._platform = platform;
+  };
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  dart.defineLazy(local_auth, {
+    /*local_auth._channel*/get _channel() {
+      return C[6] || CT.C6;
+    },
+    /*local_auth._platform*/get _platform() {
+      return C[9] || CT.C9;
+    },
+    set _platform(_) {}
+  }, false);
+  dart.trackLibraries("packages/local_auth/local_auth.dart", {
+    "package:local_auth/local_auth.dart": local_auth
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["local_auth.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAmB6C;;;QAAxC;;;;;EAAwC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAiBzB;;UACX;;UACA;;UACe;;UACJ;;UACX;;AAEH,iDACmB,eAAe,mBACf,eAAe,cACpB,UAAU,sBACF,kBAAkB,kBACtB,cAAc,wBACR,oBAAoB,iBAC3B;IAChB;;UA2Ca;;UACX;;UACA;;UACe;;UACJ;;UACX;;UACA;;AAPkB;;AASvB,cAAO,AAAgB,eAAD;AACI,mBAAuB,2CAC/C,mBAAmB,eAAe,EAClC,mBAAmB,eAAe,EAClC,cAAc,UAAU,EACxB,wBAAwB,oBAAoB,EAC5C,iBAAiB,aAAa;AAEhC,sBAAI,AAAU;AACoB,UAAhC,AAAK,IAAD,UAAQ,AAAe,cAAD;cACrB,eAAI,AAAU;AACiB,UAApC,AAAK,IAAD,UAAQ,AAAmB,kBAAD;;AAO7B,UALD,WAAM,gFAEG,AAAE,2DACL,+BACK,AAAuD,uCAA3B,AAAU;;AAGnD,cAAQ,MAAM,AAAS,4CAAmB,gBAAgB,IAAI;cAAtD,cAA4D;MACtE;;;AAO+B;;AAC7B,sBAAI,AAAU;AACZ,gBAAO,MAAM,AAAS,4CAAmB;gBAAlC,cAA2D;;AAEpE,cAAO;MACT;;;AAKoC;AAChC,cAAmE,AAC9D,gBADJ,MAAM,AAAS,kDAAyB;MAC1B;;;AAMW;;AAC1B,cAAC,MAAM,AAAS,4CAAmB;cAAlC,cAA2D;MAAK;;;AAQnB;;AAC7B,sBAEZ,MAFsB,MAAM,AAAS,kDACtC,4BADuB,aAGzB;AACsB,yBAA4B;AAepD,QAdF,AAAO,MAAD,WAAS;cAAQ;AACrB,kBAAQ,KAAK;;;AAEyB,cAAlC,AAAW,UAAD,OAAmB;AAC7B;;;;AAEyC,cAAzC,AAAW,UAAD,OAAmB;AAC7B;;;;AAEkC,cAAlC,AAAW,UAAD,OAAmB;AAC7B;;;;AAEA;;;;AAGN,cAAO,WAAU;MACnB;;;;;EACF;;;;;;;;;;;;;;;;;QA1J0C;AACpB,IAApB,uBAAY,QAAQ;EACtB;;;;;;MAPoB,mBAAQ;;;MAEnB,oBAAS","file":"../../../../../../../../../../packages/local_auth/local_auth.dart.lib.js"}');
+  // Exports:
+  return {
+    local_auth: local_auth
+  };
+}));
+
+//# sourceMappingURL=local_auth.dart.lib.js.map

@@ -1,0 +1,1853 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/hive/src/box/lazy_box_impl.dart', 'packages/SecKee/controller/encrypter.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/material/colors.dart', 'packages/flutter/src/painting/rounded_rectangle_border.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/widgets/async.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/material/card.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter_slidable/src/widgets/slidable_dismissal.dart', 'packages/flutter_slidable/src/widgets/slidable_action_pane.dart', 'packages/SecKee/icons_map.dart', 'packages/flutter/src/rendering/paragraph.dart', 'packages/flutter_slidable/src/widgets/slide_action.dart', 'packages/flutter/src/material/button_bar.dart', 'packages/flutter/src/widgets/form.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/material/text_form_field.dart', 'packages/flutter/src/material/input_border.dart', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/services/text_editing.dart', 'packages/flutter/src/material/elevated_button.dart', 'packages/flutter/src/material/material_state.dart'], (function load__packages__SecKee__pages__passwords_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__hive__src__box__lazy_box_impl$46dart, packages__SecKee__controller__encrypter$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__material__colors$46dart, packages__flutter__src__painting__rounded_rectangle_border$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__widgets__async$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__material__card$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter_slidable__src__widgets__slidable_dismissal$46dart, packages__flutter_slidable__src__widgets__slidable_action_pane$46dart, packages__SecKee__icons_map$46dart, packages__flutter__src__rendering__paragraph$46dart, packages__flutter_slidable__src__widgets__slide_action$46dart, packages__flutter__src__material__button_bar$46dart, packages__flutter__src__widgets__form$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__material__text_form_field$46dart, packages__flutter__src__material__input_border$46dart, packages__flutter__src__painting__borders$46dart, packages__flutter__src__services__text_editing$46dart, packages__flutter__src__material__elevated_button$46dart, packages__flutter__src__material__material_state$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const collection = dart_sdk.collection;
+  const _js_helper = dart_sdk._js_helper;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const editable_text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__editable_text;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const hive = packages__hive__src__box__lazy_box_impl$46dart.hive;
+  const encrypter = packages__SecKee__controller__encrypter$46dart.controller__encrypter;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const app_bar = packages__flutter__src__material__icon_button$46dart.src__material__app_bar;
+  const floating_action_button = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button;
+  const floating_action_button_location = packages__flutter__src__material__icon_button$46dart.src__material__floating_action_button_location;
+  const list_tile = packages__flutter__src__material__icon_button$46dart.src__material__list_tile;
+  const icon_button = packages__flutter__src__material__icon_button$46dart.src__material__icon_button;
+  const text_button = packages__flutter__src__material__icon_button$46dart.src__material__text_button;
+  const bottom_sheet = packages__flutter__src__material__icon_button$46dart.src__material__bottom_sheet;
+  const input_decorator = packages__flutter__src__material__icon_button$46dart.src__material__input_decorator;
+  const button_style = packages__flutter__src__material__icon_button$46dart.src__material__button_style;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const rounded_rectangle_border = packages__flutter__src__painting__rounded_rectangle_border$46dart.src__painting__rounded_rectangle_border;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const async$ = packages__flutter__src__widgets__async$46dart.src__widgets__async;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const card = packages__flutter__src__material__card$46dart.src__material__card;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const slidable = packages__flutter_slidable__src__widgets__slidable_dismissal$46dart.src__widgets__slidable;
+  const slidable_action_pane = packages__flutter_slidable__src__widgets__slidable_action_pane$46dart.src__widgets__slidable_action_pane;
+  const icons_map = packages__SecKee__icons_map$46dart.icons_map;
+  const paragraph = packages__flutter__src__rendering__paragraph$46dart.src__rendering__paragraph;
+  const slide_action = packages__flutter_slidable__src__widgets__slide_action$46dart.src__widgets__slide_action;
+  const dialog = packages__flutter__src__material__button_bar$46dart.src__material__dialog;
+  const form = packages__flutter__src__widgets__form$46dart.src__widgets__form;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const text_form_field = packages__flutter__src__material__text_form_field$46dart.src__material__text_form_field;
+  const input_border = packages__flutter__src__material__input_border$46dart.src__material__input_border;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const text_editing = packages__flutter__src__services__text_editing$46dart.src__services__text_editing;
+  const elevated_button = packages__flutter__src__material__elevated_button$46dart.src__material__elevated_button;
+  const material_state = packages__flutter__src__material__material_state$46dart.src__material__material_state;
+  var passwords = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  var $_get = dartx._get;
+  var $trim = dartx.trim;
+  var $toLowerCase = dartx.toLowerCase;
+  var $round = dartx.round;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
+    MapL: () => (T.MapL = dart.constFn(dart.legacy(core.Map)))(),
+    StringL: () => (T.StringL = dart.constFn(dart.legacy(core.String)))(),
+    WidgetL: () => (T.WidgetL = dart.constFn(dart.legacy(framework.Widget)))(),
+    JSArrayOfWidgetL: () => (T.JSArrayOfWidgetL = dart.constFn(_interceptors.JSArray$(T.WidgetL())))(),
+    AlertDialogL: () => (T.AlertDialogL = dart.constFn(dart.legacy(dialog.AlertDialog)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToAlertDialogL: () => (T.BuildContextLToAlertDialogL = dart.constFn(dart.fnType(T.AlertDialogL(), [T.BuildContextL()])))(),
+    CardL: () => (T.CardL = dart.constFn(dart.legacy(card.Card)))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    BuildContextLAndintLToCardL: () => (T.BuildContextLAndintLToCardL = dart.constFn(dart.fnType(T.CardL(), [T.BuildContextL(), T.intL()])))(),
+    AsyncSnapshotL: () => (T.AsyncSnapshotL = dart.constFn(dart.legacy(async$.AsyncSnapshot)))(),
+    BuildContextLAndAsyncSnapshotLToWidgetL: () => (T.BuildContextLAndAsyncSnapshotLToWidgetL = dart.constFn(dart.fnType(T.WidgetL(), [T.BuildContextL(), T.AsyncSnapshotL()])))(),
+    StringLToNull: () => (T.StringLToNull = dart.constFn(dart.fnType(core.Null, [T.StringL()])))(),
+    StringLToStringL: () => (T.StringLToStringL = dart.constFn(dart.fnType(T.StringL(), [T.StringL()])))(),
+    ObjectL: () => (T.ObjectL = dart.constFn(dart.legacy(core.Object)))(),
+    LinkedHashSetOfObjectL: () => (T.LinkedHashSetOfObjectL = dart.constFn(collection.LinkedHashSet$(T.ObjectL())))(),
+    SetOfObjectL: () => (T.SetOfObjectL = dart.constFn(core.Set$(T.ObjectL())))(),
+    SetLOfObjectL: () => (T.SetLOfObjectL = dart.constFn(dart.legacy(T.SetOfObjectL())))(),
+    VoidToSetLOfObjectL: () => (T.VoidToSetLOfObjectL = dart.constFn(dart.fnType(T.SetLOfObjectL(), [])))(),
+    IdentityMapOfStringL$StringL: () => (T.IdentityMapOfStringL$StringL = dart.constFn(_js_helper.IdentityMap$(T.StringL(), T.StringL())))(),
+    EdgeInsetsGeometryL: () => (T.EdgeInsetsGeometryL = dart.constFn(dart.legacy(edge_insets.EdgeInsetsGeometry)))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(ui.Color)))(),
+    ContainerL: () => (T.ContainerL = dart.constFn(dart.legacy(container.Container)))(),
+    BuildContextLToContainerL: () => (T.BuildContextLToContainerL = dart.constFn(dart.fnType(T.ContainerL(), [T.BuildContextL()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 59,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 60,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 58,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "centerTitle",
+        [_Location_column]: 9,
+        [_Location_line]: 57,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 9,
+        [_Location_line]: 58,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.constList([C[6] || CT.C6, C[7] || CT.C7], T._LocationL());
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[5] || CT.C5,
+        [_Location_name]: null,
+        [_Location_column]: 15,
+        [_Location_line]: 56,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 17,
+        [_Location_line]: 70,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 11,
+        [_Location_line]: 71,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[10] || CT.C10, C[11] || CT.C11], T._LocationL());
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[9] || CT.C9,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 69,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 9,
+        [_Location_line]: 68,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 69,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "shape",
+        [_Location_column]: 9,
+        [_Location_line]: 73,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 9,
+        [_Location_line]: 78,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.constList([C[14] || CT.C14, C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17], T._LocationL());
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[13] || CT.C13,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 67,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 17,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 17,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "textAlign",
+        [_Location_column]: 17,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.constList([C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22], T._LocationL());
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[19] || CT.C19,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 89,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.constList([C[25] || CT.C25], T._LocationL());
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[24] || CT.C24,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 88,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.constList([], T._LocationL());
+    },
+    get C26() {
+      return C[26] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[27] || CT.C27,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 109,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 35,
+        [_Location_line]: 119,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 29,
+        [_Location_line]: 120,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30, C[31] || CT.C31], T._LocationL());
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 27,
+        [_Location_line]: 118,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 42,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 25,
+        [_Location_line]: 124,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "maxLines",
+        [_Location_column]: 25,
+        [_Location_line]: 128,
+        [_Location_file]: null
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 25,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C33() {
+      return C[33] = dart.constList([C[34] || CT.C34, C[35] || CT.C35, C[36] || CT.C36, C[37] || CT.C37], T._LocationL());
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[33] || CT.C33,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 122,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 81,
+        [_Location_line]: 132,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 25,
+        [_Location_line]: 133,
+        [_Location_file]: null
+      });
+    },
+    get C39() {
+      return C[39] = dart.constList([C[40] || CT.C40, C[41] || CT.C41], T._LocationL());
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[39] || CT.C39,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 131,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 33,
+        [_Location_line]: 147,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 27,
+        [_Location_line]: 148,
+        [_Location_file]: null
+      });
+    },
+    get C43() {
+      return C[43] = dart.constList([C[44] || CT.C44, C[45] || CT.C45], T._LocationL());
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[43] || CT.C43,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 146,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 25,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 146,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48, C[49] || CT.C49], T._LocationL());
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 139,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "contentPadding",
+        [_Location_column]: 23,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "tileColor",
+        [_Location_column]: 23,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "leading",
+        [_Location_column]: 23,
+        [_Location_line]: 117,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 23,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "subtitle",
+        [_Location_column]: 23,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "trailing",
+        [_Location_column]: 23,
+        [_Location_line]: 139,
+        [_Location_file]: null
+      });
+    },
+    get C51() {
+      return C[51] = dart.constList([C[52] || CT.C52, C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57], T._LocationL());
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[51] || CT.C51,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 111,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "caption",
+        [_Location_column]: 25,
+        [_Location_line]: 154,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 25,
+        [_Location_line]: 155,
+        [_Location_file]: null
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 156,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 25,
+        [_Location_line]: 157,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.constList([C[60] || CT.C60, C[61] || CT.C61, C[62] || CT.C62, C[63] || CT.C63], T._LocationL());
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[59] || CT.C59,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 153,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 53,
+        [_Location_line]: 171,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.constList([C[67] || CT.C67], T._LocationL());
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[66] || CT.C66,
+        [_Location_name]: null,
+        [_Location_column]: 48,
+        [_Location_line]: 171,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[65] || CT.C65,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Are you sure?"
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 39,
+        [_Location_line]: 173,
+        [_Location_file]: null
+      });
+    },
+    get C70() {
+      return C[70] = dart.constList([C[71] || CT.C71], T._LocationL());
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[70] || CT.C70,
+        [_Location_name]: null,
+        [_Location_column]: 50,
+        [_Location_line]: 172,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[69] || CT.C69,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Selected Password Will  Delete"
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 57,
+        [_Location_line]: 184,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75], T._LocationL());
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 184,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[73] || CT.C73,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "Cancel"
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 39,
+        [_Location_line]: 176,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 39,
+        [_Location_line]: 184,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.constList([C[78] || CT.C78, C[79] || CT.C79], T._LocationL());
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[77] || CT.C77,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 175,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 57,
+        [_Location_line]: 201,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.constList([C[83] || CT.C83], T._LocationL());
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[82] || CT.C82,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 201,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[81] || CT.C81,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: null,
+        [Text_textSpan]: null,
+        [Text_data]: "OK"
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 39,
+        [_Location_line]: 187,
+        [_Location_file]: null
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 39,
+        [_Location_line]: 201,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.constList([C[86] || CT.C86, C[87] || CT.C87], T._LocationL());
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[85] || CT.C85,
+        [_Location_name]: null,
+        [_Location_column]: 37,
+        [_Location_line]: 186,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "title",
+        [_Location_column]: 35,
+        [_Location_line]: 171,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "content",
+        [_Location_column]: 35,
+        [_Location_line]: 172,
+        [_Location_file]: null
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actions",
+        [_Location_column]: 35,
+        [_Location_line]: 174,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.constList([C[90] || CT.C90, C[91] || CT.C91, C[92] || CT.C92], T._LocationL());
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[89] || CT.C89,
+        [_Location_name]: null,
+        [_Location_column]: 33,
+        [_Location_line]: 170,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "closeOnTap",
+        [_Location_column]: 25,
+        [_Location_line]: 162,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "caption",
+        [_Location_column]: 25,
+        [_Location_line]: 163,
+        [_Location_file]: null
+      });
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 25,
+        [_Location_line]: 164,
+        [_Location_file]: null
+      });
+    },
+    get C98() {
+      return C[98] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 165,
+        [_Location_file]: null
+      });
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 25,
+        [_Location_line]: 166,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.constList([C[95] || CT.C95, C[96] || CT.C96, C[97] || CT.C97, C[98] || CT.C98, C[99] || CT.C99], T._LocationL());
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[94] || CT.C94,
+        [_Location_name]: null,
+        [_Location_column]: 23,
+        [_Location_line]: 161,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C102() {
+      return C[102] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actionPane",
+        [_Location_column]: 21,
+        [_Location_line]: 109,
+        [_Location_file]: null
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "actionExtentRatio",
+        [_Location_column]: 21,
+        [_Location_line]: 110,
+        [_Location_file]: null
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 111,
+        [_Location_file]: null
+      });
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "secondaryActions",
+        [_Location_column]: 21,
+        [_Location_line]: 152,
+        [_Location_file]: null
+      });
+    },
+    get C101() {
+      return C[101] = dart.constList([C[102] || CT.C102, C[103] || CT.C103, C[104] || CT.C104, C[105] || CT.C105], T._LocationL());
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[101] || CT.C101,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 108,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 19,
+        [_Location_line]: 105,
+        [_Location_file]: null
+      });
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C107() {
+      return C[107] = dart.constList([C[108] || CT.C108, C[109] || CT.C109], T._LocationL());
+    },
+    get C106() {
+      return C[106] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[107] || CT.C107,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 104,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C112() {
+      return C[112] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemCount",
+        [_Location_column]: 15,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "itemBuilder",
+        [_Location_column]: 15,
+        [_Location_line]: 102,
+        [_Location_file]: null
+      });
+    },
+    get C111() {
+      return C[111] = dart.constList([C[112] || CT.C112, C[113] || CT.C113], T._LocationL());
+    },
+    get C110() {
+      return C[110] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[111] || CT.C111,
+        [_Location_name]: null,
+        [_Location_column]: 29,
+        [_Location_line]: 100,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C116() {
+      return C[116] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "future",
+        [_Location_column]: 9,
+        [_Location_line]: 85,
+        [_Location_file]: null
+      });
+    },
+    get C117() {
+      return C[117] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 86,
+        [_Location_file]: null
+      });
+    },
+    get C115() {
+      return C[115] = dart.constList([C[116] || CT.C116, C[117] || CT.C117], T._LocationL());
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[115] || CT.C115,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 84,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C120() {
+      return C[120] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "appBar",
+        [_Location_column]: 7,
+        [_Location_line]: 56,
+        [_Location_file]: null
+      });
+    },
+    get C121() {
+      return C[121] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "floatingActionButton",
+        [_Location_column]: 7,
+        [_Location_line]: 67,
+        [_Location_file]: null
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "floatingActionButtonLocation",
+        [_Location_column]: 7,
+        [_Location_line]: 81,
+        [_Location_file]: null
+      });
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 84,
+        [_Location_file]: null
+      });
+    },
+    get C119() {
+      return C[119] = dart.constList([C[120] || CT.C120, C[121] || CT.C121, C[122] || CT.C122, C[123] || CT.C123], T._LocationL());
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[119] || CT.C119,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 55,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 21,
+        [_Location_line]: 249,
+        [_Location_file]: null
+      });
+    },
+    get C127() {
+      return C[127] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 268,
+        [_Location_file]: null
+      });
+    },
+    get C128() {
+      return C[128] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 21,
+        [_Location_line]: 273,
+        [_Location_file]: null
+      });
+    },
+    get C129() {
+      return C[129] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 21,
+        [_Location_line]: 276,
+        [_Location_file]: null
+      });
+    },
+    get C125() {
+      return C[125] = dart.constList([C[126] || CT.C126, C[127] || CT.C127, C[128] || CT.C128, C[129] || CT.C129], T._LocationL());
+    },
+    get C124() {
+      return C[124] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[125] || CT.C125,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 248,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C132() {
+      return C[132] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 21,
+        [_Location_line]: 287,
+        [_Location_file]: null
+      });
+    },
+    get C131() {
+      return C[131] = dart.constList([C[132] || CT.C132], T._LocationL());
+    },
+    get C130() {
+      return C[130] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[131] || CT.C131,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 286,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C135() {
+      return C[135] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 21,
+        [_Location_line]: 322,
+        [_Location_file]: null
+      });
+    },
+    get C136() {
+      return C[136] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 330,
+        [_Location_file]: null
+      });
+    },
+    get C137() {
+      return C[137] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 21,
+        [_Location_line]: 336,
+        [_Location_file]: null
+      });
+    },
+    get C138() {
+      return C[138] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 21,
+        [_Location_line]: 339,
+        [_Location_file]: null
+      });
+    },
+    get C134() {
+      return C[134] = dart.constList([C[135] || CT.C135, C[136] || CT.C136, C[137] || CT.C137, C[138] || CT.C138], T._LocationL());
+    },
+    get C133() {
+      return C[133] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[134] || CT.C134,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 321,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C141() {
+      return C[141] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 21,
+        [_Location_line]: 350,
+        [_Location_file]: null
+      });
+    },
+    get C140() {
+      return C[140] = dart.constList([C[141] || CT.C141], T._LocationL());
+    },
+    get C139() {
+      return C[139] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[140] || CT.C140,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 349,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C144() {
+      return C[144] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 42,
+        [_Location_line]: 370,
+        [_Location_file]: null
+      });
+    },
+    get C143() {
+      return C[143] = dart.constList([C[144] || CT.C144], T._LocationL());
+    },
+    get C142() {
+      return C[142] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[143] || CT.C143,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 370,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C147() {
+      return C[147] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 25,
+        [_Location_line]: 363,
+        [_Location_file]: null
+      });
+    },
+    get C148() {
+      return C[148] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 25,
+        [_Location_line]: 370,
+        [_Location_file]: null
+      });
+    },
+    get C146() {
+      return C[146] = dart.constList([C[147] || CT.C147, C[148] || CT.C148], T._LocationL());
+    },
+    get C145() {
+      return C[145] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[146] || CT.C146,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 362,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C151() {
+      return C[151] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 21,
+        [_Location_line]: 353,
+        [_Location_file]: null
+      });
+    },
+    get C152() {
+      return C[152] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 21,
+        [_Location_line]: 354,
+        [_Location_file]: null
+      });
+    },
+    get C153() {
+      return C[153] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 376,
+        [_Location_file]: null
+      });
+    },
+    get C154() {
+      return C[154] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onChanged",
+        [_Location_column]: 21,
+        [_Location_line]: 380,
+        [_Location_file]: null
+      });
+    },
+    get C155() {
+      return C[155] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "validator",
+        [_Location_column]: 21,
+        [_Location_line]: 384,
+        [_Location_file]: null
+      });
+    },
+    get C150() {
+      return C[150] = dart.constList([C[151] || CT.C151, C[152] || CT.C152, C[153] || CT.C153, C[154] || CT.C154, C[155] || CT.C155], T._LocationL());
+    },
+    get C149() {
+      return C[149] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[150] || CT.C150,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 352,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C158() {
+      return C[158] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 21,
+        [_Location_line]: 395,
+        [_Location_file]: null
+      });
+    },
+    get C157() {
+      return C[157] = dart.constList([C[158] || CT.C158], T._LocationL());
+    },
+    get C156() {
+      return C[156] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[157] || CT.C157,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 394,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C161() {
+      return C[161] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 23,
+        [_Location_line]: 417,
+        [_Location_file]: null
+      });
+    },
+    get C162() {
+      return C[162] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 23,
+        [_Location_line]: 418,
+        [_Location_file]: null
+      });
+    },
+    get C160() {
+      return C[160] = dart.constList([C[161] || CT.C161, C[162] || CT.C162], T._LocationL());
+    },
+    get C159() {
+      return C[159] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[160] || CT.C160,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 416,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C165() {
+      return C[165] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onPressed",
+        [_Location_column]: 21,
+        [_Location_line]: 398,
+        [_Location_file]: null
+      });
+    },
+    get C166() {
+      return C[166] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 416,
+        [_Location_file]: null
+      });
+    },
+    get C167() {
+      return C[167] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 21,
+        [_Location_line]: 423,
+        [_Location_file]: null
+      });
+    },
+    get C164() {
+      return C[164] = dart.constList([C[165] || CT.C165, C[166] || CT.C166, C[167] || CT.C167], T._LocationL());
+    },
+    get C163() {
+      return C[163] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[164] || CT.C164,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 397,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C170() {
+      return C[170] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisSize",
+        [_Location_column]: 17,
+        [_Location_line]: 242,
+        [_Location_file]: null
+      });
+    },
+    get C171() {
+      return C[171] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 17,
+        [_Location_line]: 246,
+        [_Location_file]: null
+      });
+    },
+    get C169() {
+      return C[169] = dart.constList([C[170] || CT.C170, C[171] || CT.C171], T._LocationL());
+    },
+    get C168() {
+      return C[168] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[169] || CT.C169,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 241,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C174() {
+      return C[174] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 241,
+        [_Location_file]: null
+      });
+    },
+    get C173() {
+      return C[173] = dart.constList([C[174] || CT.C174], T._LocationL());
+    },
+    get C172() {
+      return C[172] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[173] || CT.C173,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 239,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    },
+    get C177() {
+      return C[177] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 13,
+        [_Location_line]: 235,
+        [_Location_file]: null
+      });
+    },
+    get C178() {
+      return C[178] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 13,
+        [_Location_line]: 236,
+        [_Location_file]: null
+      });
+    },
+    get C179() {
+      return C[179] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 239,
+        [_Location_file]: null
+      });
+    },
+    get C176() {
+      return C[176] = dart.constList([C[177] || CT.C177, C[178] || CT.C178, C[179] || CT.C179], T._LocationL());
+    },
+    get C175() {
+      return C[175] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[176] || CT.C176,
+        [_Location_name]: null,
+        [_Location_column]: 11,
+        [_Location_line]: 234,
+        [_Location_file]: "file:///C:/Users/canbe/AndroidStudioProjects/flutter_password_manager/lib/pages/passwords.dart"
+      });
+    }
+  }, false);
+  var C = Array(180).fill(void 0);
+  var I = ["package:SecKee/pages/passwords.dart"];
+  var callback = dart.privateName(passwords, "Passwords.callback");
+  passwords.Passwords = class Passwords extends framework.StatefulWidget {
+    get callback() {
+      return this[callback];
+    }
+    set callback(value) {
+      this[callback] = value;
+    }
+    createState() {
+      return new passwords._PasswordsState.new();
+    }
+  };
+  (passwords.Passwords.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[callback] = null;
+    passwords.Passwords.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = passwords.Passwords.prototype;
+  dart.addTypeTests(passwords.Passwords);
+  dart.addTypeCaches(passwords.Passwords);
+  dart.setMethodSignature(passwords.Passwords, () => ({
+    __proto__: dart.getMethods(passwords.Passwords.__proto__),
+    createState: dart.fnType(dart.legacy(passwords._PasswordsState), [])
+  }));
+  dart.setLibraryUri(passwords.Passwords, I[0]);
+  dart.setFieldSignature(passwords.Passwords, () => ({
+    __proto__: dart.getFields(passwords.Passwords.__proto__),
+    callback: dart.fieldType(dart.legacy(dart.fnType(dart.void, [])))
+  }));
+  var _encryptService = dart.privateName(passwords, "_encryptService");
+  var _controller = dart.privateName(passwords, "_controller");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
+  var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
+  var Text_semanticsLabel = dart.privateName(text, "Text.semanticsLabel");
+  var Text_maxLines = dart.privateName(text, "Text.maxLines");
+  var Text_textScaleFactor = dart.privateName(text, "Text.textScaleFactor");
+  var Text_overflow = dart.privateName(text, "Text.overflow");
+  var Text_softWrap = dart.privateName(text, "Text.softWrap");
+  var Text_locale = dart.privateName(text, "Text.locale");
+  var Text_textDirection = dart.privateName(text, "Text.textDirection");
+  var Text_textAlign = dart.privateName(text, "Text.textAlign");
+  var Text_strutStyle = dart.privateName(text, "Text.strutStyle");
+  var Text_style = dart.privateName(text, "Text.style");
+  var Text_textSpan = dart.privateName(text, "Text.textSpan");
+  var Text_data = dart.privateName(text, "Text.data");
+  passwords._PasswordsState = class _PasswordsState extends framework.State$(dart.legacy(passwords.Passwords)) {
+    refresh() {
+      this.setState(dart.fn(() => {
+      }, T.VoidToNull()));
+    }
+    fetch() {
+      return async.async(dart.dynamic, (function* fetch() {
+        if (dart.test(this.box.values[$isEmpty])) {
+          return async.Future.value(null);
+        } else {
+          return async.Future.value(this.box.toMap());
+        }
+      }).bind(this));
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({centerTitle: true, title: new text.Text.new("Passwords", {style: new text_style.TextStyle.new({fontSize: 22.0}), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[4] || CT.C4}), floatingActionButton: new floating_action_button.FloatingActionButton.new({onPressed: dart.bind(this, 'insertDB'), child: new icon.Icon.new(icons.Icons.add, {color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[8] || CT.C8}), shape: new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(10.0)}), backgroundColor: colors.Colors.lightBlue._get(900), $creationLocationd_0dea112b090073317d4: C[12] || CT.C12}), floatingActionButtonLocation: floating_action_button_location.FloatingActionButtonLocation.centerFloat, body: new async$.FutureBuilder.new({future: this.fetch(), builder: dart.fn((context, snapshot) => {
+            if (snapshot.data == null) {
+              return new basic.Center.new({child: new text.Text.new("There is no saved password. Tap '+' buton to create new one.", {style: new text_style.TextStyle.new({fontSize: 22.0}), textAlign: ui.TextAlign.center, $creationLocationd_0dea112b090073317d4: C[18] || CT.C18}), $creationLocationd_0dea112b090073317d4: C[23] || CT.C23});
+            } else {
+              return new scroll_view.ListView.builder({itemCount: T.intN().as(dart.dload(snapshot.data, 'length')), itemBuilder: dart.fn((context, index) => {
+                  let t0;
+                  let data = T.MapL().as(this.box.getAt(index));
+                  return new card.Card.new({margin: new edge_insets.EdgeInsets.all(12.0), child: new slidable.Slidable.new({actionPane: new slidable_action_pane.SlidableDrawerActionPane.new({$creationLocationd_0dea112b090073317d4: C[26] || CT.C26}), actionExtentRatio: 0.25, child: new list_tile.ListTile.new({contentPadding: new edge_insets.EdgeInsets.symmetric({vertical: 12.0, horizontal: 20.0}), tileColor: colors.Colors.lightBlue, leading: (t0 = icons_map.icons[$_get](data[$_get]("type")), t0 == null ? new icon.Icon.new(icons.Icons.lock, {size: 32.0, $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}) : t0), title: new text.Text.new(dart.str(data[$_get]("type")), {style: new text_style.TextStyle.new({fontSize: 22.0}), maxLines: 1, overflow: paragraph.TextOverflow.ellipsis, $creationLocationd_0dea112b090073317d4: C[32] || CT.C32}), subtitle: new text.Text.new(dart.str(data[$_get]("userName")) + "\nClick copy icon to copy passsword", {style: new text_style.TextStyle.new({fontSize: 16.0}), $creationLocationd_0dea112b090073317d4: C[38] || CT.C38}), trailing: new icon_button.IconButton.new({onPressed: dart.fn(() => {
+                            this[_encryptService].copyToClipboard(T.StringL().as(data[$_get]("password")), context);
+                          }, T.VoidToNull()), icon: new icon.Icon.new(icons.Icons.copy_rounded, {size: 36.0, $creationLocationd_0dea112b090073317d4: C[42] || CT.C42}), $creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), $creationLocationd_0dea112b090073317d4: C[50] || CT.C50}), secondaryActions: T.JSArrayOfWidgetL().of([new slide_action.IconSlideAction.new({caption: "Edit", color: colors.Colors.white, icon: icons.Icons.edit, onTap: dart.fn(() => {
+                          }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[58] || CT.C58}), new slide_action.IconSlideAction.new({closeOnTap: true, caption: "Delete", color: colors.Colors.red, icon: icons.Icons.delete, onTap: dart.fn(() => {
+                            dialog.showDialog(T.StringL(), {context: context, builder: dart.fn(context => new dialog.AlertDialog.new({title: C[64] || CT.C64, content: C[68] || CT.C68, actions: T.JSArrayOfWidgetL().of([new text_button.TextButton.new({onPressed: dart.fn(() => {
+                                      navigator.Navigator.pop(T.StringL(), context, "Cancel");
+                                      core.print("dataBAse ?");
+                                      core.print(snapshot.data);
+                                      core.print("generated passs: ");
+                                      core.print(passwords.generatePassword(10.0));
+                                    }, T.VoidToNull()), child: C[72] || CT.C72, $creationLocationd_0dea112b090073317d4: C[76] || CT.C76}), new text_button.TextButton.new({onPressed: dart.fn(() => {
+                                      this.box.deleteAt(index);
+                                      dart.dsend(snapshot.data, 'remove', [index]);
+                                      navigator.Navigator.pop(T.StringL(), context, "OK");
+                                      this.fetch();
+                                      core.print("fetch bitti");
+                                      this.refresh();
+                                    }, T.VoidToNull()), child: C[80] || CT.C80, $creationLocationd_0dea112b090073317d4: C[84] || CT.C84})]), $creationLocationd_0dea112b090073317d4: C[88] || CT.C88}), T.BuildContextLToAlertDialogL())});
+                            core.print("helo world");
+                            core.print("data : " + dart.str(data));
+                          }, T.VoidToNull()), $creationLocationd_0dea112b090073317d4: C[93] || CT.C93})]), $creationLocationd_0dea112b090073317d4: C[100] || CT.C100}), $creationLocationd_0dea112b090073317d4: C[106] || CT.C106});
+                }, T.BuildContextLAndintLToCardL()), $creationLocationd_0dea112b090073317d4: C[110] || CT.C110});
+            }
+          }, T.BuildContextLAndAsyncSnapshotLToWidgetL()), $creationLocationd_0dea112b090073317d4: C[114] || CT.C114}), $creationLocationd_0dea112b090073317d4: C[118] || CT.C118});
+    }
+    insertDB() {
+      let type = null;
+      let passTitle = null;
+      let userName = null;
+      let password = null;
+      bottom_sheet.showModalBottomSheet(dart.dynamic, {context: this.context, isScrollControlled: true, builder: dart.fn(context => new container.Container.new({color: colors.Colors.white70, padding: media_query.MediaQuery.of(context).viewInsets, child: new form.Form.new({child: new basic.Column.new({mainAxisSize: flex.MainAxisSize.min, children: T.JSArrayOfWidgetL().of([new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({focusedBorder: new input_border.OutlineInputBorder.new({borderSide: new borders.BorderSide.new({color: colors.Colors.lightBlue, width: 2.0})}), enabledBorder: new input_border.OutlineInputBorder.new({borderSide: new borders.BorderSide.new({color: colors.Colors.black45, width: 2.0})}), hintText: "Service"}), style: new text_style.TextStyle.new({fontSize: 18.0}), onChanged: dart.fn(val => {
+                    type = val;
+                  }, T.StringLToNull()), validator: dart.fn(val => {
+                    if (val[$trim]()[$isEmpty]) {
+                      return "Enter A Value !";
+                    } else {
+                      return null;
+                    }
+                  }, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[124] || CT.C124}), new basic.SizedBox.new({height: 12.0, $creationLocationd_0dea112b090073317d4: C[130] || CT.C130}), new text_form_field.TextFormField.new({decoration: new input_decorator.InputDecoration.new({focusedBorder: new input_border.OutlineInputBorder.new({borderSide: new borders.BorderSide.new({color: colors.Colors.lightBlue, width: 2.0})}), enabledBorder: new input_border.OutlineInputBorder.new({borderSide: new borders.BorderSide.new({color: colors.Colors.black45, width: 2.0})}), labelText: "Username"}), style: new text_style.TextStyle.new({fontSize: 18.0}), onChanged: dart.fn(val => {
+                    userName = val;
+                  }, T.StringLToNull()), validator: dart.fn(val => {
+                    if (val[$trim]()[$isEmpty]) {
+                      return "Enter A Value !";
+                    } else {
+                      return null;
+                    }
+                  }, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[133] || CT.C133}), new basic.SizedBox.new({height: 12.0, $creationLocationd_0dea112b090073317d4: C[139] || CT.C139}), new text_form_field.TextFormField.new({controller: this[_controller], decoration: new input_decorator.InputDecoration.new({focusedBorder: new input_border.OutlineInputBorder.new({borderSide: new borders.BorderSide.new({color: colors.Colors.lightBlue, width: 2.0})}), enabledBorder: new input_border.OutlineInputBorder.new({borderSide: new borders.BorderSide.new({color: colors.Colors.black45, width: 2.0})}), suffixIcon: new icon_button.IconButton.new({onPressed: dart.fn(() => T.LinkedHashSetOfObjectL().from([password = passwords.generatePassword(10.0), this[_controller].value = this[_controller].value.copyWith({text: password, selection: new text_editing.TextSelection.collapsed({offset: password.length})})]), T.VoidToSetLOfObjectL()), icon: new icon.Icon.new(icons.Icons.vpn_key_outlined, {$creationLocationd_0dea112b090073317d4: C[142] || CT.C142}), $creationLocationd_0dea112b090073317d4: C[145] || CT.C145}), border: new input_border.OutlineInputBorder.new(), labelText: "Password"}), style: new text_style.TextStyle.new({fontSize: 18.0}), onChanged: dart.fn(val => {
+                    password = val;
+                  }, T.StringLToNull()), validator: dart.fn(val => {
+                    if (val[$trim]()[$isEmpty]) {
+                      return "Enter A Value !";
+                    } else {
+                      return null;
+                    }
+                  }, T.StringLToStringL()), $creationLocationd_0dea112b090073317d4: C[149] || CT.C149}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C[156] || CT.C156}), new elevated_button.ElevatedButton.new({onPressed: dart.fn(() => {
+                    password = this[_encryptService].encrypt(password);
+                    let box = hive.Hive.box(dart.dynamic, "passwords");
+                    let value = new (T.IdentityMapOfStringL$StringL()).from(["type", type[$toLowerCase](), "passTitle", passTitle, "userName", userName, "password", password]);
+                    box.add(value);
+                    navigator.Navigator.of(context).pop(T.ObjectL());
+                    this.refresh();
+                  }, T.VoidToNull()), child: new text.Text.new("Save", {style: new text_style.TextStyle.new({fontSize: 20.0}), $creationLocationd_0dea112b090073317d4: C[159] || CT.C159}), style: new button_style.ButtonStyle.new({padding: material_state.MaterialStateProperty.all(T.EdgeInsetsGeometryL(), new edge_insets.EdgeInsets.symmetric({vertical: 12.0, horizontal: 50.0})), backgroundColor: material_state.MaterialStateProperty.all(T.ColorL(), colors.Colors.lightBlue)}), $creationLocationd_0dea112b090073317d4: C[163] || CT.C163})]), $creationLocationd_0dea112b090073317d4: C[168] || CT.C168}), $creationLocationd_0dea112b090073317d4: C[172] || CT.C172}), $creationLocationd_0dea112b090073317d4: C[175] || CT.C175}), T.BuildContextLToContainerL())});
+    }
+  };
+  (passwords._PasswordsState.new = function() {
+    this.box = hive.Hive.box(dart.dynamic, "passwords");
+    this.longPressed = false;
+    this[_encryptService] = new encrypter.EncryptService.new();
+    this[_controller] = new editable_text.TextEditingController.new();
+    passwords._PasswordsState.__proto__.new.call(this);
+    ;
+  }).prototype = passwords._PasswordsState.prototype;
+  dart.addTypeTests(passwords._PasswordsState);
+  dart.addTypeCaches(passwords._PasswordsState);
+  dart.setMethodSignature(passwords._PasswordsState, () => ({
+    __proto__: dart.getMethods(passwords._PasswordsState.__proto__),
+    refresh: dart.fnType(dart.void, []),
+    fetch: dart.fnType(dart.legacy(async.Future), []),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)]),
+    insertDB: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(passwords._PasswordsState, I[0]);
+  dart.setFieldSignature(passwords._PasswordsState, () => ({
+    __proto__: dart.getFields(passwords._PasswordsState.__proto__),
+    box: dart.fieldType(dart.legacy(hive.Box)),
+    longPressed: dart.fieldType(dart.legacy(core.bool)),
+    [_encryptService]: dart.fieldType(dart.legacy(encrypter.EncryptService)),
+    [_controller]: dart.finalFieldType(dart.legacy(editable_text.TextEditingController))
+  }));
+  passwords.generatePassword = function generatePassword(_numberCharPassword) {
+    let _leLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let _numbers = "0123456789";
+    let _special = "*-/-_.,:;!?=";
+    let _allowedChars = "";
+    _allowedChars = _allowedChars + _leLetters;
+    _allowedChars = _allowedChars + _numbers;
+    _allowedChars = _allowedChars + _special;
+    let i = 0;
+    let _result = "";
+    while (i < _numberCharPassword[$round]()) {
+      let randomInt = math.Random.secure().nextInt(_allowedChars.length);
+      _result = _result + _allowedChars[$_get](randomInt);
+      i = i + 1;
+    }
+    return _result;
+  };
+  dart.trackLibraries("packages/SecKee/pages/passwords.dart", {
+    "package:SecKee/pages/passwords.dart": passwords
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["passwords.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAWe;;;;;;;AADoB;IAAiB;;;;IACrC;;;EACf;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA6BmB,MAAf,cAAS;;IACX;;AAEY;AACV,sBAAI,AAAI,AAAO;AACb,gBAAc,oBAAM;;AAEpB,gBAAc,oBAAM,AAAI;;MAE5B;;UAG0B;AACxB,YAAO,oCACG,qCACO,aACN,kBACL,qBACO,wCAEK,gJAKM,0EACT,0BACJ,kBACC,yBACQ,qFAET,uEACsB,wCACzB,0BAGoB,AAAS,6BAAC,+FAGuB,gFAGrD,sCACI,uBACC,SAAC,SAAS;AACjB,gBAAI,AAAS,AAAK,QAAN;AACV,oBAAO,8BACE,kBACL,wEACO,wCACK,mBAIS;;AAIzB,oBAAgB,0DACW,WAAd,AAAS,QAAD,gCACN,SAAC,SAAS;;AACjB,yCAAO,AAAI,eAAM,KAAK;AAC1B,wBAAO,4BACc,+BACjB,cAEK,uCACO,qIACO,aACZ,4CACsB,gDACf,kBACE,mBAEI,mCACuB,KAApB,AAAK,uBAAC,AAAI,IAAA,QAAC,UAAN,aACtB,kBACQ,yBACA,8EAEL,kBACY,SAAd,AAAI,IAAA,QAAC,kBACD,wCACK,kBAGF,aACa,sGAEf,kBACgD,SAArD,AAAI,IAAA,QAAC,eAAY,+CACb,wCACK,6EAKJ,2CACG;AAIR,4BAHD,AAAgB,qDACd,AAAI,IAAA,QAAC,cACL,OAAO;oDAGL,kBACE,iCACA,yMAIc,yBACxB,+CACW,eACK,2BACF,yBACL;yGAIT,kDACc,eACH,iBACK,yBACF,2BACL;AAuCJ,4BAtCD,yCACW,OAAO,WACP,QAAc,WACnB,uFAImB,yBACf,2CACa;AACuB,sCAAtB,qCAAI,OAAO,EAAE;AACJ,sCAAnB,WAAM;AACc,sCAApB,WAAM,AAAS,QAAD;AACY,sCAA1B,WAAM;AACqB,sCAA3B,WAAM,2BAAiB;2IAK3B,2CACa;AACU,sCAAnB,AAAI,kBAAS,KAAK;AACS,sCAAb,WAAd,AAAS,QAAD,kBAAa,KAAK;AACE,sCAAlB,qCAAI,OAAO,EAAE;AAEhB,sCAAP;AACoB,sCAApB,WAAM;AAEG,sCAAT;;AAWK,4BAAnB,WAAM;AACe,4BAArB,WAAM,AAAc,qBAAL,IAAI;;;;;IAgB3C;;AAGS;AACA;AACA;AACA;AAmNN,MAlND,0DACW,kCACW,eACX,QAAC,WACN,oCACgB,gCAET,AACA,0BADG,OAAO,qBAER,0BAEE,oCACsB,iCAIjB,yBAER,mDAEM,wDACa,qDACD,mCAAyB,gCAAkB,wBAE1C,qDACD,mCAAyB,8BAAgB,mBAE7C,oBAWL,wCACK,mBAID,QAAC;AACA,oBAAV,OAAO,GAAG;oDAED,QAAC;AACV,wBAAI,AACC,AACA,GAFE;AAGL,4BAAO;;AAEP,4BAAO;;yGAIb,gCACU,mEAkCV,mDACc,wDACK,qDACD,mCAAyB,gCAAkB,wBAE1C,qDACD,mCAAyB,8BAAgB,oBACpB,qBAE9B,wCACK,mBAKD,QAAC;AACI,oBAAd,WAAW,GAAG;oDAEL,QAAC;AACV,wBAAI,AACC,AACA,GAFE;AAGL,4BAAO;;AAEP,4BAAO;;yGAIb,gCACU,mEAEV,mDACc,+BAEZ,wDACiB,qDACD,mCAAyB,gCAAkB,wBAE1C,qDACD,mCAAyB,8BAAgB,qBAE3C,2CACC,cAAK,iCACd,WAAW,2BAAkB,OAC7B,AAAY,0BAAQ,AAAY,AAAM,wCAChC,QAAQ,aACW,kDAAkB,AAAS,QAAD,+CAG/C,kBAAW,iKAEX,sDACG,qBAGN,wCACK,mBAGD,QAAC;AACI,oBAAd,WAAW,GAAG;oDAGL,QAAC;AACV,wBAAI,AACC,AACA,GAFE;AAGL,4BAAO;;AAEP,4BAAO;;yGAIb,gCACU,mEAEV,mDACa;AAEmC,oBAA5C,WAAW,AAAgB,8BAAQ,QAAQ;AAEvC,8BAAM,AAAK,4BAAI;AAEf,gCAAQ,6CACV,QAAQ,AAAK,IAAD,kBACZ,aAAa,SAAS,EACtB,YAAY,QAAQ,EACpB,YAAY,QAAQ;AAER,oBAAd,AAAI,GAAD,KAAK,KAAK;AAEc,oBAAjB,AAAY,uBAAT,OAAO;AACX,oBAAT;6CAGK,kBACL,gBACO,wCACK,4EAIP,2CAC0B,kEAClB,gDACC,kBACE,0BAGuB,qDAC9B;IAU7B;;;IArZI,WAAM,AAAK,4BAAI;IACd,mBAAc;IACJ,wBAAsB;IACT,oBAAc;;;EAmZ5C;;;;;;;;;;;;;;;;;;yDA5a+B;AACtB,qBAAa;AACb,mBAAW;AACX,mBAAW;AACX,wBAAgB;AACO,IAA9B,gBAAA,AAAc,aAAD,GAAK,UAAU;AACA,IAA5B,gBAAA,AAAc,aAAD,GAAK,QAAQ;AACE,IAA5B,gBAAA,AAAc,aAAD,GAAK,QAAQ;AAEtB,YAAI;AACD,kBAAU;AAGjB,WAAO,AAAE,CAAD,GAAG,AAAoB,mBAAD;AACxB,sBAAmB,AAAS,6BAAQ,AAAc,aAAD;AAClB,MAAnC,UAAA,AAAQ,OAAD,GAAI,AAAa,aAAA,QAAC,SAAS;AAC/B,MAAH,IAAA,AAAC,CAAA;;AAGH,UAAO,QAAO;EAChB","file":"../../../../../../packages/SecKee/pages/passwords.dart.lib.js"}');
+  // Exports:
+  return {
+    pages__passwords: passwords
+  };
+}));
+
+//# sourceMappingURL=passwords.dart.lib.js.map

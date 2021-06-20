@@ -1,0 +1,108 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.SecKee"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="18"
+9        android:targetSdkVersion="29" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\debug\AndroidManifest.xml:6:22-64
+15    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+15-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:3:6-74
+15-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:3:23-72
+16    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+16-->[androidx.biometric:biometric:1.0.0-beta01] C:\Users\canbe\.gradle\caches\transforms-2\files-2.1\66c62277ed9fa4bf73cfea089e5b7d44\biometric-1.0.0-beta01\AndroidManifest.xml:24:5-72
+16-->[androidx.biometric:biometric:1.0.0-beta01] C:\Users\canbe\.gradle\caches\transforms-2\files-2.1\66c62277ed9fa4bf73cfea089e5b7d44\biometric-1.0.0-beta01\AndroidManifest.xml:24:22-69
+17
+18    <application
+18-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:4:4-43:19
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.1.0] C:\Users\canbe\.gradle\caches\transforms-2\files-2.1\72fb509a2ac7211ca5138d5aedfec800\core-1.1.0\AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+21        android:icon="@mipmap/ic_launcher"
+21-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:6:9-43
+22        android:label="SecKee" >
+22-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:5:9-31
+23        <activity
+23-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:7:9-37:20
+24            android:name="com.example.SecKee.MainActivity"
+24-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:8:13-41
+25            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+25-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:13:13-163
+26            android:excludeFromRecents="true"
+26-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:10:13-46
+27            android:hardwareAccelerated="true"
+27-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:14:13-47
+28            android:launchMode="singleInstance"
+28-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:9:13-48
+29            android:noHistory="true"
+29-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:11:13-37
+30            android:theme="@style/LaunchTheme"
+30-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:12:13-47
+31            android:windowSoftInputMode="adjustResize" >
+31-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:15:13-55
+32
+33            <!--
+34                 Specifies an Android theme to apply to this Activity as soon as
+35                 the Android process has started. This theme is visible to the user
+36                 while the Flutter UI initializes. After that, this theme continues
+37                 to determine the Window background behind the Flutter UI.
+38            -->
+39            <meta-data
+39-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:20:13-23:17
+40                android:name="io.flutter.embedding.android.NormalTheme"
+40-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:21:15-70
+41                android:resource="@style/NormalTheme" />
+41-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:22:15-52
+42            <!--
+43                 Displays an Android View that continues showing the launch screen
+44                 Drawable until Flutter paints its first frame, then this splash
+45                 screen fades out. A splash screen is useful to avoid any visual
+46                 gap between the end of Android's launch screen and the painting of
+47                 Flutter's first frame.
+48            -->
+49            <meta-data
+49-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:29:13-32:17
+50                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+50-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:30:15-79
+51                android:resource="@drawable/launch_background" />
+51-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:31:15-61
+52
+53            <intent-filter>
+53-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:33:13-36:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:34:17-68
+54-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:34:25-66
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:35:17-76
+56-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:35:27-74
+57            </intent-filter>
+58        </activity>
+59        <!--
+60             Don't delete the meta-data below.
+61             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+62        -->
+63        <meta-data
+63-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:40:9-42:33
+64            android:name="flutterEmbedding"
+64-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:41:13-44
+65            android:value="2" />
+65-->C:\Users\canbe\AndroidStudioProjects\Seckee\android\app\src\main\AndroidManifest.xml:42:13-30
+66
+67        <activity
+67-->[androidx.biometric:biometric:1.0.0-beta01] C:\Users\canbe\.gradle\caches\transforms-2\files-2.1\66c62277ed9fa4bf73cfea089e5b7d44\biometric-1.0.0-beta01\AndroidManifest.xml:28:9-30:67
+68            android:name="androidx.biometric.DeviceCredentialHandlerActivity"
+68-->[androidx.biometric:biometric:1.0.0-beta01] C:\Users\canbe\.gradle\caches\transforms-2\files-2.1\66c62277ed9fa4bf73cfea089e5b7d44\biometric-1.0.0-beta01\AndroidManifest.xml:29:13-78
+69            android:theme="@style/DeviceCredentialHandlerTheme" />
+69-->[androidx.biometric:biometric:1.0.0-beta01] C:\Users\canbe\.gradle\caches\transforms-2\files-2.1\66c62277ed9fa4bf73cfea089e5b7d44\biometric-1.0.0-beta01\AndroidManifest.xml:30:13-64
+70    </application>
+71
+72</manifest>
