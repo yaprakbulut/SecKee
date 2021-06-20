@@ -188,7 +188,7 @@ The delete button is accessed by swiping the card to the left. After clicking th
 
 # Demo 
 
-##### Youtube link: [https://youtu.be/tRzwu_yurDU](url)
+##### Youtube link: <a href="https://youtu.be/tRzwu_yurDU">https://youtu.be/tRzwu_yurDU</a>
 
 https://user-images.githubusercontent.com/32189700/122691554-14de1680-d239-11eb-80c3-15dc3ca50771.mp4
 
